@@ -22,4 +22,9 @@ public class ExampleSaveDTO implements Serializable {
      * 示例编号
      */
     private String exampleNo;
+
+    /**
+     * 例子项
+     */
+    private ExampleItemDTO item;
 }

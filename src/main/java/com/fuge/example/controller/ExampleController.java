@@ -1,11 +1,10 @@
 package com.fuge.example.controller;
 
+import com.fuge.example.base.CommonResult;
 import com.fuge.example.constants.ExampleConstants;
 import com.fuge.example.pojo.dto.ExampleSaveDTO;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.fuge.example.pojo.vo.ExampleDetailVO;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -23,7 +22,32 @@ public class ExampleController {
      * @return 成功
      */
     @PostMapping(ExampleConstants.Request.URL_EXAMPLE_SAVE)
-    public String save(@RequestBody ExampleSaveDTO exampleSaveDTO) {
-        return "success";
+    public CommonResult<String> save(@RequestBody ExampleSaveDTO exampleSaveDTO) {
+        return CommonResult.success("保存成功");
     }
+
+
+    /**
+     * 删除数据
+     *
+     * @param id 主健ID
+     * @return 删除结果
+     */
+    @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
+    public CommonResult<String> delete(Integer id) {
+        return CommonResult.success("删除成功");
+    }
+
+
+    /**
+     * 详情接口
+     *
+     * @param id 主健ID
+     * @return 详情对象
+     */
+    @GetMapping(ExampleConstants.Request.URL_EXAMPLE_DETAIL)
+    public CommonResult<ExampleDetailVO> detail(@PathVariable Integer id) {
+        return CommonResult.success(new ExampleDetailVO());
+    }
+
 }

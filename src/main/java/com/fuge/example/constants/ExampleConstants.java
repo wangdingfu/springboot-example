@@ -4,7 +4,7 @@ public interface ExampleConstants {
 
 
     interface Request {
-        String URL_EXAMPLE = "example";
-        String URL_EXAMPLE_SAVE = "save";
+        String URL_EXAMPLE = "cc";
+        String URL_EXAMPLE_SAVE = "bb";
     }
 }

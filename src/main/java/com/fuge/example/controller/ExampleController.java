@@ -7,6 +7,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+/**
+ * 示例访问控制器
+ */
 @RestController
 @RequestMapping(ExampleConstants.Request.URL_EXAMPLE)
 public class ExampleController {

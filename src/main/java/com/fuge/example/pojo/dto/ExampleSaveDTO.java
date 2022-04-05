@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 
 /**
@@ -11,7 +12,7 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-public class ExampleSaveDTO implements Serializable {
+public class ExampleSaveDTO extends BasePageDTO implements Serializable {
 
     /**
      * 示例名称
@@ -26,5 +27,5 @@ public class ExampleSaveDTO implements Serializable {
     /**
      * 例子项
      */
-    private ExampleItemDTO item;
+    private List<ExampleItemDTO> itemList;
 }

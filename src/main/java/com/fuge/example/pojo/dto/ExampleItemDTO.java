@@ -3,6 +3,7 @@ package com.fuge.example.pojo.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class ExampleItemDTO {
+public class ExampleItemDTO extends BasePageDTO implements Serializable {
 
     /**
      * 明细ID

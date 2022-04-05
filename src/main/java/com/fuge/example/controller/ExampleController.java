@@ -34,7 +34,7 @@ public class ExampleController {
      * @return 删除结果
      */
     @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
-    public CommonResult<String> delete(Integer id) {
+    public CommonResult<String> delete(Integer id, Integer subId) {
         return CommonResult.success("删除成功");
     }
 
@@ -46,7 +46,7 @@ public class ExampleController {
      * @return 详情对象
      */
     @GetMapping(ExampleConstants.Request.URL_EXAMPLE_DETAIL)
-    public CommonResult<ExampleDetailVO> detail(@PathVariable Integer id) {
+    public CommonResult<ExampleDetailVO> detail(@PathVariable Integer id, Integer subId) {
         return CommonResult.success(new ExampleDetailVO());
     }
 

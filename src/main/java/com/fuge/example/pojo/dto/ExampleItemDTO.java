@@ -34,8 +34,4 @@ public class ExampleItemDTO extends BasePageDTO implements Serializable {
      */
     private Integer itemLength;
 
-    /**
-     * 明细集合
-     */
-    private List<String> detailList;
 }

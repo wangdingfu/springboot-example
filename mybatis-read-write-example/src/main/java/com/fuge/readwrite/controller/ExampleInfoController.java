@@ -1,5 +1,6 @@
 package com.fuge.readwrite.controller;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
 import com.fuge.readwrite.entity.ExampleInfo;
 import com.fuge.readwrite.mapper.ExampleInfoMapper;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public class ExampleInfoController {
     @Resource
     private ExampleInfoMapper exampleInfoMapper;
 
+    @DS("slave")
     @GetMapping("save")
     public Integer save(){
         ExampleInfo exampleInfo = new ExampleInfo();
@@ -30,6 +32,7 @@ public class ExampleInfoController {
     }
 
 
+    @DS("slave")
     @GetMapping("select")
     public ExampleInfo select(Integer id){
        return exampleInfoMapper.selectById(id);

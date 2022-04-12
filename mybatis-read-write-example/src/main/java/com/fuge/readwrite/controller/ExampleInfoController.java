@@ -21,18 +21,19 @@ public class ExampleInfoController {
     @Resource
     private ExampleInfoMapper exampleInfoMapper;
 
-    @DS("slave")
     @GetMapping("save")
     public Integer save(){
         ExampleInfo exampleInfo = new ExampleInfo();
         exampleInfo.setExampleNo("001");
         exampleInfo.setExampleName("示例1");
-        exampleInfoMapper.insert(exampleInfo);
+        int insert = exampleInfoMapper.insert(exampleInfo);
+        ExampleInfo exampleInfo1 = select(exampleInfo.getId());
+        System.out.println(exampleInfo1);
         return exampleInfo.getId();
     }
 
 
-    @DS("slave")
+    @DS("master")
     @GetMapping("select")
     public ExampleInfo select(Integer id){
        return exampleInfoMapper.selectById(id);

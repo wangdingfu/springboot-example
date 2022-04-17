@@ -1,4 +1,4 @@
-package example.pojo.vo;
+package com.fuge.example.pojo.vo;
 
 import lombok.Getter;
 import lombok.Setter;

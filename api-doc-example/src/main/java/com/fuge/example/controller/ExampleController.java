@@ -1,4 +1,4 @@
-package example.controller;
+package com.fuge.example.controller;
 
 import com.fuge.example.base.CommonResult;
 import com.fuge.example.constants.ExampleConstants;

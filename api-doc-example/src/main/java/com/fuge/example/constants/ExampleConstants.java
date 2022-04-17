@@ -1,4 +1,4 @@
-package example.constants;
+package com.fuge.example.constants;
 
 public interface ExampleConstants {
 

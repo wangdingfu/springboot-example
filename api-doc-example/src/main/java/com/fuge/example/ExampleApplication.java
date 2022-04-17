@@ -1,4 +1,4 @@
-package example;
+package com.fuge.example;
 
 
 import org.springframework.boot.SpringApplication;

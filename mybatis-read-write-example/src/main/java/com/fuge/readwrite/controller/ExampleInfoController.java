@@ -33,7 +33,7 @@ public class ExampleInfoController {
     }
 
 
-    @DS("master")
+    @DS("slave")
     @GetMapping("select")
     public ExampleInfo select(Integer id){
        return exampleInfoMapper.selectById(id);

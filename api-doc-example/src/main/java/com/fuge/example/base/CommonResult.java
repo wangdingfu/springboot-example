@@ -1,4 +1,4 @@
-package example.base;
+package com.fuge.example.base;
 
 import lombok.Getter;
 import lombok.Setter;

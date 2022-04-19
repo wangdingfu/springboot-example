@@ -3,6 +3,7 @@ package com.fuge.example.controller;
 import com.fuge.example.base.CommonResult;
 import com.fuge.example.constants.ExampleConstants;
 import com.fuge.example.pojo.dto.ExampleSaveDTO;
+import com.fuge.example.pojo.dto.ExtInfoDTO;
 import com.fuge.example.pojo.vo.ExampleDetailVO;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,6 @@ import java.util.List;
 @RequestMapping(ExampleConstants.Request.URL_EXAMPLE)
 public class ExampleController {
 
-
     /**
      * 请求保存示例的方法
      *
@@ -24,9 +24,23 @@ public class ExampleController {
      * @return 成功
      */
     @PostMapping(ExampleConstants.Request.URL_EXAMPLE_SAVE)
-    public CommonResult<String> save(@RequestBody List<ExampleSaveDTO> exampleSaveDTO) {
+    public CommonResult<String> save(@RequestBody ExampleSaveDTO<ExtInfoDTO> exampleSaveDTO) {
         return CommonResult.success("保存成功");
     }
+
+
+    /**
+     * 请求保存示例的方法
+     *
+     * @param exampleSaveDTO 保存示例对象
+     * @return 成功
+     */
+    @PostMapping(ExampleConstants.Request.URL_EXAMPLE_BATCH_SAVE)
+    public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO> exampleSaveDTO) {
+        return CommonResult.success("保存成功");
+    }
+
+
 
 
     /**

@@ -12,7 +12,7 @@ import java.util.List;
  */
 @Getter
 @Setter
-public class ExampleSaveDTO extends BasePageDTO implements Serializable {
+public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
 
     /**
      * 示例名称
@@ -28,4 +28,9 @@ public class ExampleSaveDTO extends BasePageDTO implements Serializable {
      * 例子项
      */
     private List<ExampleItemDTO> itemList;
+
+    /**
+     * 扩展信息集合
+     */
+    private List<T> extInfoList;
 }

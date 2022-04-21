@@ -12,10 +12,33 @@ import java.util.List;
 
 /**
  * 示例访问控制器
+ * <p>
+ * 具体描述<br>
+ * 具体描述<br>
+ *
+ * @author wangdingfu
+ * @Descption 示例访问控制器
+ * @Date 2022-04-13 21:24:58
  */
 @RestController
 @RequestMapping(ExampleConstants.Request.URL_EXAMPLE)
 public class ExampleController {
+
+
+    /**
+     * 删除数据
+     * <p>
+     * aa
+     *
+     * @param id    主健ID
+     * @param subId 子项ID
+     * @return 删除结果
+     */
+    @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
+    public CommonResult<String> delete(int id, int subId) {
+        return CommonResult.success("删除成功");
+    }
+
 
     /**
      * 请求保存示例的方法
@@ -38,20 +61,6 @@ public class ExampleController {
     @PostMapping(ExampleConstants.Request.URL_EXAMPLE_BATCH_SAVE)
     public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO> exampleSaveDTO) {
         return CommonResult.success("保存成功");
-    }
-
-
-
-
-    /**
-     * 删除数据
-     *
-     * @param id 主健ID
-     * @return 删除结果
-     */
-    @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
-    public CommonResult<String> delete(int id, int subId) {
-        return CommonResult.success("删除成功");
     }
 
 

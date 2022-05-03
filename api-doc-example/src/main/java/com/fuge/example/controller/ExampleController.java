@@ -1,7 +1,9 @@
 package com.fuge.example.controller;
 
+import com.fuge.example.annotation.ExampleAnnotation;
 import com.fuge.example.base.CommonResult;
 import com.fuge.example.constants.ExampleConstants;
+import com.fuge.example.enumtype.ExampleEnum;
 import com.fuge.example.pojo.dto.ExampleSaveDTO;
 import com.fuge.example.pojo.dto.ExtInfoDTO;
 import com.fuge.example.pojo.vo.ExampleDetailVO;
@@ -14,7 +16,7 @@ import java.util.List;
  * 示例访问控制器
  */
 @RestController
-@RequestMapping(ExampleConstants.Request.URL_EXAMPLE)
+@RequestMapping({ExampleConstants.Request.URL_EXAMPLE, "aa"})
 public class ExampleController {
 
     /**
@@ -23,8 +25,8 @@ public class ExampleController {
      * @param exampleSaveDTO 保存示例对象
      * @return 成功
      */
-    @PostMapping(ExampleConstants.Request.URL_EXAMPLE_SAVE)
-    public CommonResult<String> save(@RequestBody ExampleSaveDTO<ExtInfoDTO> exampleSaveDTO) {
+    @PostMapping({ExampleConstants.Request.URL_EXAMPLE_SAVE, "ba1_save"})
+    public CommonResult<String> save(@RequestBody(required = false) @ExampleAnnotation(value = ExampleEnum.EXAMPLE, clazz = ExtInfoDTO.class) ExampleSaveDTO<ExtInfoDTO> exampleSaveDTO) {
         return CommonResult.success("保存成功");
     }
 
@@ -39,8 +41,6 @@ public class ExampleController {
     public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO> exampleSaveDTO) {
         return CommonResult.success("保存成功");
     }
-
-
 
 
     /**

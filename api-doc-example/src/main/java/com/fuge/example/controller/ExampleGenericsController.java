@@ -5,11 +5,14 @@ import com.fuge.example.constants.ExampleConstants;
 import com.fuge.example.pojo.dto.ExampleGenDTO;
 import com.fuge.example.pojo.dto.ExampleGenSaveDTO;
 import com.fuge.example.pojo.dto.ExampleSaveDTO;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.BufferedReader;
+import java.io.StringReader;
 import java.util.List;
 
 /**

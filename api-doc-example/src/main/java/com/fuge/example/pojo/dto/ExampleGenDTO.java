@@ -7,5 +7,12 @@ import lombok.Setter;
 @Setter
 public class ExampleGenDTO<T> extends BasePageDTO {
 
+    /**
+     * 内容数据
+     */
+
+    /** 内容数据 */
+
+    //** 内容数据 */
     private T data;
 }

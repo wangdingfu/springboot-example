@@ -2,6 +2,7 @@ package com.fuge.example.constants;
 
 public interface ExampleConstants {
 
+    String VALUE = "STRING_VALUE";
 
     interface Request {
         String URL_EXAMPLE = "cc";

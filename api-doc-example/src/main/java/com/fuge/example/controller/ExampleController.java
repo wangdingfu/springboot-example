@@ -49,7 +49,7 @@ public class ExampleController {
      * @return 成功
      */
     @PostMapping({ExampleConstants.Request.URL_EXAMPLE_SAVE, "ba1_save"})
-    public CommonResult<String> save(@RequestBody(required = false) @ExampleAnnotation(value = ExampleEnum.EXAMPLE, clazz = ExtInfoDTO.class) ExampleSaveDTO<ExtInfoDTO> exampleSaveDTO) {
+    public CommonResult<String> save(@RequestBody(required = false) @ExampleAnnotation(big = 333, string = ExampleConstants.VALUE, value = ExampleEnum.EXAMPLE, clazz = ExtInfoDTO.class) ExampleSaveDTO<ExtInfoDTO> exampleSaveDTO) {
         return CommonResult.success("保存成功");
     }
 

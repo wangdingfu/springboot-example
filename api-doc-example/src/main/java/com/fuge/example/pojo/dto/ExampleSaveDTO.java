@@ -25,6 +25,16 @@ public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
     private String exampleNo;
 
     /**
+     * id集合
+     */
+    private List<List<Integer>> exampleIdList;
+
+    /**
+     * 数组集合
+     */
+    private int[][] ids;
+
+    /**
      * 例子项
      */
     private List<ExampleItemDTO> itemList;

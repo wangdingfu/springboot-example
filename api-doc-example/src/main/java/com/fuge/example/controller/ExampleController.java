@@ -19,6 +19,18 @@ import java.util.List;
 @RequestMapping({ExampleConstants.Request.URL_EXAMPLE, "aa"})
 public class ExampleController {
 
+
+    /**
+     * 请求保存示例的方法
+     *
+     * @param list 保存示例对象
+     * @return 成功
+     */
+    @PostMapping(ExampleConstants.Request.URL_EXAMPLE_BATCH_SAVE)
+    public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO> list) {
+        return CommonResult.success("保存成功");
+    }
+
     /**
      * 请求保存示例的方法
      *
@@ -30,31 +42,6 @@ public class ExampleController {
         return CommonResult.success("保存成功");
     }
 
-
-    /**
-     * 请求保存示例的方法
-     *
-     * @param exampleSaveDTO 保存示例对象
-     * @return 成功
-     */
-    @PostMapping(ExampleConstants.Request.URL_EXAMPLE_BATCH_SAVE)
-    public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO> exampleSaveDTO) {
-        return CommonResult.success("保存成功");
-    }
-
-
-    /**
-     * 删除数据
-     *
-     * @param id 主健ID
-     * @return 删除结果
-     */
-    @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
-    public CommonResult<String> delete(int id, int subId) {
-        return CommonResult.success("删除成功");
-    }
-
-
     /**
      * 详情接口
      *
@@ -65,5 +52,21 @@ public class ExampleController {
     public CommonResult<ExampleDetailVO> detail(@PathVariable String id, int subId) {
         return CommonResult.success(new ExampleDetailVO());
     }
+
+
+
+
+    /**
+     * 删除数据
+     *
+     * @param id 主健ID
+     * @return 删除结果
+     */
+    @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
+    public CommonResult<String> delete(@RequestBody int id, @RequestBody int subId) {
+        return CommonResult.success("删除成功");
+    }
+
+
 
 }

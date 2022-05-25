@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -14,6 +15,7 @@ import java.util.List;
 @Setter
 public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
 
+    private static final long serialVersionUID = 7539751867062907086L;
     /**
      * 示例名称
      */
@@ -28,6 +30,10 @@ public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
      * id集合
      */
     private List<List<Integer>> exampleIdList;
+
+    private Integer[] iids;
+
+    private List<BigDecimal[]> bigDecimals;
 
     /**
      * 数组集合

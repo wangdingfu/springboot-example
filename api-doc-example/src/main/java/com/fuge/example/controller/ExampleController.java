@@ -21,7 +21,7 @@ public class ExampleController {
 
 
     /**
-     * 请求保存示例的方法
+     * 批量保存示例
      *
      * @param list 保存示例对象
      * @return 成功
@@ -32,7 +32,7 @@ public class ExampleController {
     }
 
     /**
-     * 请求保存示例的方法
+     * 单个保存示例
      *
      * @param exampleSaveDTO 保存示例对象
      * @return 成功

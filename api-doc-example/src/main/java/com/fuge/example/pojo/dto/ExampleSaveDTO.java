@@ -31,15 +31,6 @@ public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
      */
     private List<List<Integer>> exampleIdList;
 
-    private Integer[] iids;
-
-    private List<BigDecimal[]> bigDecimals;
-
-    /**
-     * 数组集合
-     */
-    private int[][] ids;
-
     /**
      * 例子项
      */

@@ -27,7 +27,7 @@ public class ExampleController {
      * @return 成功
      */
     @PostMapping(ExampleConstants.Request.URL_EXAMPLE_BATCH_SAVE)
-    public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO> list) {
+    public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO<ExtInfoDTO>> list) {
         return CommonResult.success("保存成功");
     }
 
@@ -49,11 +49,9 @@ public class ExampleController {
      * @return 详情对象
      */
     @GetMapping(ExampleConstants.Request.URL_EXAMPLE_DETAIL)
-    public CommonResult<ExampleDetailVO> detail(@PathVariable String id, int subId) {
+    public CommonResult<ExampleDetailVO> detail(String id, int subId) {
         return CommonResult.success(new ExampleDetailVO());
     }
-
-
 
 
     /**
@@ -63,10 +61,9 @@ public class ExampleController {
      * @return 删除结果
      */
     @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
-    public CommonResult<String> delete(@RequestBody int id, @RequestBody int subId) {
+    public CommonResult<String> delete(int id, int subId) {
         return CommonResult.success("删除成功");
     }
-
 
 
 }

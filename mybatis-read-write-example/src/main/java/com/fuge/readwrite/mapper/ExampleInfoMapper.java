@@ -2,6 +2,9 @@ package com.fuge.readwrite.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.fuge.readwrite.entity.ExampleInfo;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @DESCPTION:

@@ -14,13 +14,6 @@ import java.util.List;
 
 /**
  * 示例访问控制器
- * <p>
- * 具体描述<br>
- * 具体描述<br>
- *
- * @author wangdingfu
- * @Descption 示例访问控制器
- * @Date 2022-04-13 21:24:58
  */
 @RestController
 @RequestMapping({ExampleConstants.Request.URL_EXAMPLE, "aa"})
@@ -28,22 +21,18 @@ public class ExampleController {
 
 
     /**
-     * 删除数据
-     * <p>
-     * aa
+     * 批量保存示例
      *
-     * @param id    主健ID
-     * @param subId 子项ID
-     * @return 删除结果
+     * @param list 保存示例对象
+     * @return 成功
      */
-    @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
-    public CommonResult<String> delete(int id, int subId) {
-        return CommonResult.success("删除成功");
+    @PostMapping(ExampleConstants.Request.URL_EXAMPLE_BATCH_SAVE)
+    public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO<ExtInfoDTO>> list) {
+        return CommonResult.success("保存成功");
     }
 
-
     /**
-     * 请求保存示例的方法
+     * 单个保存示例
      *
      * @param exampleSaveDTO 保存示例对象
      * @return 成功
@@ -53,20 +42,6 @@ public class ExampleController {
         return CommonResult.success("保存成功");
     }
 
-
-    /**
-     * 请求保存示例的方法
-     *
-     * @param exampleSaveDTO 保存示例对象
-     * @return 成功
-     */
-    @PostMapping(ExampleConstants.Request.URL_EXAMPLE_BATCH_SAVE)
-    public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO> exampleSaveDTO) {
-        return CommonResult.success("保存成功");
-    }
-
-
-
     /**
      * 详情接口
      *
@@ -74,8 +49,21 @@ public class ExampleController {
      * @return 详情对象
      */
     @GetMapping(ExampleConstants.Request.URL_EXAMPLE_DETAIL)
-    public CommonResult<ExampleDetailVO> detail(@PathVariable String id, int subId) {
+    public CommonResult<ExampleDetailVO> detail(String id, int subId) {
         return CommonResult.success(new ExampleDetailVO());
     }
+
+
+    /**
+     * 删除数据
+     *
+     * @param id 主健ID
+     * @return 删除结果
+     */
+    @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
+    public CommonResult<String> delete(int id, int subId) {
+        return CommonResult.success("删除成功");
+    }
+
 
 }

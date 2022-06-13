@@ -10,5 +10,5 @@ import com.fuge.example.pojo.vo.RuleInfoVO;
 public interface RuleInfoService {
 
 
-    RuleInfoVO findRule(Integer ruleId);
+    RuleInfoVO findRule(Integer ruleId, String ruleCode, Integer bizId);
 }

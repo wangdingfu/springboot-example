@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class RuleInfoServiceImpl implements RuleInfoService {
+
     @Override
-    public RuleInfoVO findRule(Integer ruleId) {
+    public RuleInfoVO findRule(Integer ruleId, String ruleCode, Integer bizId) {
         return null;
     }
 }

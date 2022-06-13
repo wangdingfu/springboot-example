@@ -2,13 +2,13 @@ package com.fuge.example.controller;
 
 import com.fuge.example.base.CommonResult;
 import com.fuge.example.pojo.dto.RuleInfoQueryDTO;
+import com.fuge.example.pojo.vo.RuleInfoVO;
 import com.fuge.example.service.RuleInfoService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author wangdingfu
@@ -23,15 +23,33 @@ public class RuleInfoController {
     private RuleInfoService ruleInfoService;
 
     /**
-     * 保存条件
+     * 查询规则
      *
-     * @param ruleInfoQueryDTO 规则ID
-     * @return 规则对象
+     * @param ruleId   规则ID
+     * @param ruleCode 规则code
+     * @param bizId    业务ID
+     * @param bizNo    业务编号
+     * @return 规则信息对象
      */
-    @PostMapping("/findRule")
-    public CommonResult<String> findRule(RuleInfoQueryDTO ruleInfoQueryDTO) {
-        ruleInfoService.findRule(ruleInfoQueryDTO.getRuleId());
-        return CommonResult.success("条件保存成功");
+    @PostMapping(value = {"/findRule/{ruleId}", "/findRule/{ruleCode}", "/findRule/{bizId}"})
+    public CommonResult<RuleInfoVO> findRule(@PathVariable(required = false) Integer ruleId,
+                                             @PathVariable(required = false) String ruleCode,
+                                             @PathVariable(required = false) Integer bizId,
+                                             Integer bizNo,
+                                             HttpServletRequest request) {
+        return CommonResult.success(ruleInfoService.findRule(ruleId, ruleCode, bizId));
     }
 
+
+    /**
+     * 上传规则
+     *
+     * @param file     规则文件
+     * @param queryDTO 查询参数
+     * @return 上传结果
+     */
+    @PostMapping("uploadRule")
+    public CommonResult<String> uploadRule(MultipartFile file, RuleInfoQueryDTO queryDTO) {
+        return CommonResult.success("上传成功");
+    }
 }

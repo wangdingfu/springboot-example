@@ -26,6 +26,8 @@ public class RuleManagerController {
     @Resource
     private RuleConditionService ruleConditionService;
 
+
+
     /**
      * 保存条件
      *
@@ -41,6 +43,7 @@ public class RuleManagerController {
 
     /**
      * 根据规则ID获取规则条件集合
+     *
      * @param ruleId 规则ID
      * @return 规则的条件集合
      */

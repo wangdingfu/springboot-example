@@ -22,9 +22,12 @@ import java.util.ResourceBundle;
  * SPRING_PROFILES_ACTIVE=dev/sit/uat 才启用该配置
  */
 @Configuration
-@EnableOpenApi//会自动开启配置，启动类不需要加任何注解
-@EnableSwaggerBootstrapUI//访问美化，方便查看调试
+@EnableOpenApi
+@EnableSwaggerBootstrapUI
 public class Swagger3Config {
+
+
+
     /**
      * @return Docket是swagger全局配置对象
      */

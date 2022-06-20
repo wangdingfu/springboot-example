@@ -72,5 +72,12 @@
             <artifactId>swagger-bootstrap-ui</artifactId>
             <version>1.8.5</version>
         </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
     </dependencies>
 </project>

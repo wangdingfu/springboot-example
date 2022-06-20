@@ -7,6 +7,8 @@ import com.fuge.example.enumtype.ExampleEnum;
 import com.fuge.example.pojo.dto.ExampleSaveDTO;
 import com.fuge.example.pojo.dto.ExtInfoDTO;
 import com.fuge.example.pojo.vo.ExampleDetailVO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 /**
  * 示例访问控制器
  */
+@Api(tags = "示例控制器")
 @RestController
 @RequestMapping({ExampleConstants.Request.URL_EXAMPLE, "aa"})
 public class ExampleController {
@@ -26,6 +29,7 @@ public class ExampleController {
      * @param list 保存示例对象
      * @return 成功
      */
+    @ApiOperation("批量保存示例")
     @PostMapping(ExampleConstants.Request.URL_EXAMPLE_BATCH_SAVE)
     public CommonResult<String> batchSave(@RequestBody List<ExampleSaveDTO<ExtInfoDTO>> list) {
         return CommonResult.success("保存成功");

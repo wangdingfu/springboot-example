@@ -1,6 +1,7 @@
 package com.fuge.example.pojo.dto;
 
 import com.alibaba.fastjson.JSONObject;
+import com.fuge.example.pojo.group.SaveGroup;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,18 +25,13 @@ public class RuleConditionDTO {
      */
     private String id;
 
-    private Map map1;
-    /**
-     * map集合
-     */
-    private Map<String, Object> map2;
 
     private JSONObject jsonObject;
 
     /**
      * 节点类型
      */
-    @NotNull(message = "条件根节点类型不能为空")
+    @NotNull(message = "条件根节点类型不能为空", groups = {SaveGroup.class})
     private Integer nodeType;
 
     /**
@@ -67,6 +63,6 @@ public class RuleConditionDTO {
      * 子条件
      */
     @Valid
-    @NotEmpty(message = "条件列表不能为空")
+    @NotEmpty(message = "条件列表不能为空", groups = {SaveGroup.class})
     private List<RuleConditionDTO> children;
 }

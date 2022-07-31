@@ -2,6 +2,7 @@ package com.fuge.example.controller;
 
 import com.fuge.example.base.CommonResult;
 import com.fuge.example.pojo.dto.RuleConditionDTO;
+import com.fuge.example.pojo.group.SaveGroup;
 import com.fuge.example.pojo.vo.RuleConditionVO;
 import com.fuge.example.service.RuleConditionService;
 import org.springframework.validation.annotation.Validated;
@@ -28,7 +29,6 @@ public class RuleManagerController {
     private RuleConditionService ruleConditionService;
 
 
-
     /**
      * 保存条件
      *
@@ -36,7 +36,7 @@ public class RuleManagerController {
      * @return 保存成功
      */
     @PostMapping("condition/save")
-    public CommonResult<String> saveCondition(@Validated @RequestBody RuleConditionDTO ruleConditionDTO) {
+    public CommonResult<String> saveCondition(@Validated(SaveGroup.class) @RequestBody RuleConditionDTO ruleConditionDTO) {
         ruleConditionService.saveCondition(ruleConditionDTO);
         return CommonResult.success("条件保存成功");
     }

@@ -1,5 +1,6 @@
 package com.fuge.example.pojo.dto;
 
+import com.fuge.example.enumtype.CodeMsgEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 @Getter
 @Setter
-@ApiModel(value = "保存示例对象",description = "示例对象")
+@ApiModel(value = "保存示例对象", description = "示例对象")
 public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
 
     private static final long serialVersionUID = 7539751867062907086L;
@@ -30,6 +31,12 @@ public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
      */
     @ApiModelProperty("示例名称")
     private String exampleNo;
+
+    /**
+     * 测试枚举
+     * @see CodeMsgEnum
+     */
+    private Integer code;
 
     /**
      * id集合

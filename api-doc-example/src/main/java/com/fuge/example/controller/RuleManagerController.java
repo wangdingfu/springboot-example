@@ -1,6 +1,7 @@
 package com.fuge.example.controller;
 
 import com.fuge.example.base.CommonResult;
+import com.fuge.example.enumtype.PmsKey;
 import com.fuge.example.pojo.dto.RuleConditionDTO;
 import com.fuge.example.pojo.group.SaveGroup;
 import com.fuge.example.pojo.vo.RuleConditionVO;
@@ -31,10 +32,11 @@ public class RuleManagerController {
 
     /**
      * 保存条件
-     *
+     * @exportType ruleConditionExport
      * @param ruleConditionDTO 规则条件对象
      * @return 保存成功
      */
+    @PmsKey("root.wdf.rule.save")
     @PostMapping("condition/save")
     public CommonResult<String> saveCondition(@Validated(SaveGroup.class) @RequestBody RuleConditionDTO ruleConditionDTO) {
         ruleConditionService.saveCondition(ruleConditionDTO);
@@ -48,6 +50,7 @@ public class RuleManagerController {
      * @param ruleId 规则ID
      * @return 规则的条件集合
      */
+    @PmsKey("root.wdf.rule.find")
     @PostMapping("condition/findByRuleId")
     public CommonResult<List<RuleConditionVO>> findCondition(@NotBlank(message = "规则ID不能为空") String ruleId) {
         return CommonResult.success(ruleConditionService.findByRuleId(ruleId));

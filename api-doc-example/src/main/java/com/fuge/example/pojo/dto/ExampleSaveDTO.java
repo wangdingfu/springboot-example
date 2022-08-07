@@ -20,6 +20,7 @@ import java.util.List;
 public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
 
     private static final long serialVersionUID = 7539751867062907086L;
+
     /**
      * 示例名称
      */
@@ -32,11 +33,6 @@ public class ExampleSaveDTO<T> extends BasePageDTO implements Serializable {
     @ApiModelProperty("示例名称")
     private String exampleNo;
 
-    /**
-     * 测试枚举
-     * @see CodeMsgEnum
-     */
-    private Integer code;
 
     /**
      * id集合

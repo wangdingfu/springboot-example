@@ -1,6 +1,7 @@
 package com.fuge.example.pojo.dto;
 
 import com.alibaba.fastjson.JSONObject;
+import com.fuge.example.enumtype.CodeMsgEnum;
 import com.fuge.example.pojo.group.SaveGroup;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,6 +20,14 @@ import java.util.Map;
 @Getter
 @Setter
 public class RuleConditionDTO {
+
+
+    /**
+     * 测试枚举
+     *
+     * @see CodeMsgEnum
+     */
+    private Integer code;
 
     /**
      * 条件ID

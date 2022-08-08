@@ -1,7 +1,7 @@
 package com.fuge.example.controller;
 
 import com.fuge.example.base.CommonResult;
-import com.fuge.example.enumtype.PmsKey;
+import com.fuge.example.enumtype.Permission;
 import com.fuge.example.pojo.dto.RuleConditionDTO;
 import com.fuge.example.pojo.group.SaveGroup;
 import com.fuge.example.pojo.vo.RuleConditionVO;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import springfox.documentation.oas.annotations.EnableOpenApi;
 
 import javax.annotation.Resource;
 import javax.validation.constraints.NotBlank;
@@ -36,7 +35,7 @@ public class RuleManagerController {
      * @param ruleConditionDTO 规则条件对象
      * @return 保存成功
      */
-    @PmsKey("root.wdf.rule.save")
+    @Permission("root.wdf.rule.save")
     @PostMapping("condition/save")
     public CommonResult<String> saveCondition(@Validated(SaveGroup.class) @RequestBody RuleConditionDTO ruleConditionDTO) {
         ruleConditionService.saveCondition(ruleConditionDTO);
@@ -50,7 +49,7 @@ public class RuleManagerController {
      * @param ruleId 规则ID
      * @return 规则的条件集合
      */
-    @PmsKey("root.wdf.rule.find")
+    @Permission("root.wdf.rule.find")
     @PostMapping("condition/findByRuleId")
     public CommonResult<List<RuleConditionVO>> findCondition(@NotBlank(message = "规则ID不能为空") String ruleId) {
         return CommonResult.success(ruleConditionService.findByRuleId(ruleId));

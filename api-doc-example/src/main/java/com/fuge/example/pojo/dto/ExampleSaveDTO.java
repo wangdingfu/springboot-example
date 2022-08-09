@@ -1,13 +1,11 @@
 package com.fuge.example.pojo.dto;
 
-import com.fuge.example.enumtype.CodeMsgEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.List;
 
 

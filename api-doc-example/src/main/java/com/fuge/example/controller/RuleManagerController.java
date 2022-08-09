@@ -17,7 +17,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 /**
- * @author onemo
+ * @author wangdingfu
  * @Descption 规则管理控制器
  * @Date 2022-03-06 11:05:47
  */

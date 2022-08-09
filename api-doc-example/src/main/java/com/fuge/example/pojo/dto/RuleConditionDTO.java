@@ -1,6 +1,5 @@
 package com.fuge.example.pojo.dto;
 
-import com.alibaba.fastjson.JSONObject;
 import com.fuge.example.enumtype.RuleStatusEnum;
 import com.fuge.example.pojo.group.SaveGroup;
 import lombok.Getter;
@@ -32,9 +31,6 @@ public class RuleConditionDTO {
      * 条件ID
      */
     private String id;
-
-
-    private JSONObject jsonObject;
 
     /**
      * 节点类型

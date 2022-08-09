@@ -21,7 +21,7 @@ public class RuleConditionDTO {
 
 
     /**
-     * 测试枚举
+     * 规则状态
      *
      * @see RuleStatusEnum
      */

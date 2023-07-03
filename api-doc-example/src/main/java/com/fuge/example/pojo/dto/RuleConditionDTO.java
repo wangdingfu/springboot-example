@@ -1,5 +1,7 @@
 package com.fuge.example.pojo.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fuge.example.enumtype.RuleStatusEnum;
 import com.fuge.example.pojo.group.SaveGroup;
 import lombok.Getter;
@@ -25,27 +27,30 @@ public class RuleConditionDTO {
      *
      * @see RuleStatusEnum
      */
+    @JsonIgnore
     private Integer ruleStatus;
 
     /**
      * 条件ID
      */
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
-    /**
-     * 节点类型
-     */
-    @NotNull(message = "条件根节点类型不能为空", groups = {SaveGroup.class})
+
+    @NotNull(message = "条件根节点类型 不能为空", groups = {SaveGroup.class})
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Integer nodeType;
 
     /**
      * 条件key
      */
+    @JsonProperty
     private String key;
 
     /**
      * 条件key类型
      */
+    @JsonProperty(access = JsonProperty.Access.READ_WRITE)
     private String keyType;
 
     /**

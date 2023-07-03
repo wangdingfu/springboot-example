@@ -1,0 +1,7 @@
+###
+# /rule/condition/findByRuleId/{ruleId}
+POST http://localhost:8013/rule/condition/findByRuleId/1
+
+ruleId=1
+
+###

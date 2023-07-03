@@ -25,8 +25,8 @@ import java.util.List;
 public class ExampleGenericsController {
 
     /**
-     * 请求保存示例的方法
-     *
+     * 请求保存示例的方法请求保存示例的方法请求保存示例的方法请求保存示例的方法请求保存示例的方法
+     *请求保存示例的方法请求保存示例的方法请求保存示例的方法
      * @param dataList 保存示例对象
      * @return 成功
      */

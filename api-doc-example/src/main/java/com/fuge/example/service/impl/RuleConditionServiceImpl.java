@@ -14,13 +14,16 @@ import java.util.List;
  */
 @Service
 public class RuleConditionServiceImpl implements RuleConditionService {
+
     @Override
     public void saveCondition(RuleConditionDTO ruleConditionDTO) {
-
+        RuleConditionVO ruleConditionVO = new RuleConditionVO();
     }
 
     @Override
     public List<RuleConditionVO> findByRuleId(String ruleId) {
+
+
         return null;
     }
 }

@@ -50,8 +50,13 @@ public class RuleManagerController {
      * @return 规则的条件集合
      */
     @Permission("root.wdf.rule.find")
-    @PostMapping("condition/findByRuleId")
+    @PostMapping("condition/findByRuleId/{ruleId}")
     public CommonResult<List<RuleConditionVO>> findCondition(@NotBlank(message = "规则ID不能为空") String ruleId) {
         return CommonResult.success(ruleConditionService.findByRuleId(ruleId));
+    }
+
+    @PostMapping("condition/findByRuleId/1")
+    public CommonResult<List<RuleConditionVO>> findCondition() {
+        return CommonResult.success(null);
     }
 }

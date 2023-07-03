@@ -1,12 +1,15 @@
 package com.fuge.example.controller;
 
+import cn.hutool.core.date.DateUtil;
 import com.fuge.example.annotation.ExampleAnnotation;
 import com.fuge.example.base.CommonResult;
 import com.fuge.example.constants.ExampleConstants;
 import com.fuge.example.enumtype.ExampleEnum;
 import com.fuge.example.pojo.dto.ExampleSaveDTO;
 import com.fuge.example.pojo.dto.ExtInfoDTO;
+import com.fuge.example.pojo.dto.FuDocAnchor;
 import com.fuge.example.pojo.vo.ExampleDetailVO;
+import com.itextpdf.text.Anchor;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -48,12 +51,12 @@ public class ExampleController {
 
     /**
      * 详情接口
-     *
+//     *
      * @param id 主健ID
      * @return 详情对象
      */
     @GetMapping(ExampleConstants.Request.URL_EXAMPLE_DETAIL)
-    public CommonResult<ExampleDetailVO> detail(String id, int subId) {
+    public CommonResult<ExampleDetailVO> detail(@PathVariable() String id, @PathVariable String subId) {
         return CommonResult.success(new ExampleDetailVO());
     }
 
@@ -64,8 +67,8 @@ public class ExampleController {
      * @param id 主健ID
      * @return 删除结果
      */
-    @DeleteMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
-    public CommonResult<String> delete(int id, int subId) {
+    @RequestMapping(ExampleConstants.Request.URL_EXAMPLE_DELETE)
+    public CommonResult<String> delete(@RequestParam Integer id, Integer subId) {
         return CommonResult.success("删除成功");
     }
 

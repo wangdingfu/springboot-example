@@ -1,0 +1,51 @@
+### 查询项目分页列表接口
+GET http://localhost:8080/api/pm/project/listPage
+    ?pageNo=1&pageSize=3
+    &appCode=fuxi
+    &privateKey=54fe61b8b64945148345a495fb0af43d
+    &requestTime=1684320654
+    &sign=983b371b654deaf8a5f200783c01b69b
+Content-Type: application/x-www-form-urlencoded
+
+#[unSelect] appCode=fuxi2&privateKey=54fe61b8b64945148345a495fb0af432
+pageNo=1&pageSize=10
+
+
+
+<> 2023-05-18T095229.200.json
+<> 2023-05-17T185754.200.json
+
+
+###
+# 查询规则
+GET http://localhost:8012/rule/findRule?ruleId=1467&ruleCode=zFNQ&bizId=3162
+
+
+# 请求参数
+ruleId=1467&ruleCode=zFNQ&bizId=3162
+
+<> 删除数据.json
+
+###
+
+# 保存条件
+POST http://localhost:8012/rule/condition/save
+Content-Type: application/json
+
+
+{
+    "id": "3Am",
+    "key": "tgHs",
+    "keyType": "VDeOyT",
+    "operate": "3",
+    "value": "iQ4",
+    "valueType": "mPgir5cEd",
+    "children": [
+        {
+        }
+    ]
+}
+
+<> 删除数据.json
+
+###

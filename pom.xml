@@ -7,6 +7,7 @@
     <modules>
         <module>api-doc-example</module>
         <module>mybatis-read-write-example</module>
+        <module>sqlLite-example</module>
     </modules>
 
     <parent>

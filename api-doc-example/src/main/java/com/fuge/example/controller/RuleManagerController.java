@@ -36,8 +36,8 @@ public class RuleManagerController {
      * @return 保存成功
      */
     @Permission("root.wdf.rule.save")
-    @PostMapping("condition/save")
-    public CommonResult<String> saveCondition(@Validated(SaveGroup.class) @RequestBody RuleConditionDTO ruleConditionDTO) {
+    @PostMapping("condition/save/{ruleStatus}")
+    public CommonResult<String> saveCondition3(@Validated(SaveGroup.class) @RequestBody RuleConditionDTO ruleConditionDTO) {
         ruleConditionService.saveCondition(ruleConditionDTO);
         return CommonResult.success("条件保存成功");
     }
@@ -51,7 +51,7 @@ public class RuleManagerController {
      */
     @Permission("root.wdf.rule.find")
     @PostMapping("condition/findByRuleId/{ruleId}")
-    public CommonResult<List<RuleConditionVO>> findCondition(@NotBlank(message = "规则ID不能为空") String ruleId) {
+    public CommonResult<List<RuleConditionVO>> findCondition2(@NotBlank(message = "规则ID不能为空") String ruleId) {
         return CommonResult.success(ruleConditionService.findByRuleId(ruleId));
     }
 

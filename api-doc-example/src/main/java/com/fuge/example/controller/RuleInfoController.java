@@ -41,7 +41,7 @@ public class RuleInfoController {
      * @return 规则信息对象
      */
     @GetMapping(value = {"/findRule/{ruleId}", "/findRule/{ruleCode}", "/findRule/{bizId}"})
-    public CommonResult<RuleInfoVO> findRule(@PathVariable(required = false) Integer ruleId,
+    public CommonResult<RuleInfoVO> aa(@PathVariable(required = false) Integer ruleId,
                                              @PathVariable(required = false) String ruleCode,
                                              @PathVariable(required = false) Integer bizId,
                                              Integer bizNo,
@@ -58,7 +58,7 @@ public class RuleInfoController {
      * @return 规则信息
      */
     @GetMapping("/findRule")
-    public CommonResult<RuleInfoVO> findRule(@RequestParam Integer ruleId, String ruleCode, Integer bizId, HttpServletRequest request) {
+    public CommonResult<RuleInfoVO> findRule1(@RequestParam Integer ruleId, String ruleCode, Integer bizId, HttpServletRequest request) {
         return CommonResult.success(ruleInfoService.findRule(ruleId, ruleCode, bizId));
     }
 
